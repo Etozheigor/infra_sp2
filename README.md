@@ -28,6 +28,17 @@ cd infra
 ```
 docker-compose up
 ```
+Выполнить по почереди следующие команды:
+
+```
+docker-compose exec web python manage.py migrate
+```
+```
+docker-compose exec web python manage.py createsuperuser
+```
+```
+docker-compose exec web python manage.py collectstatic --no-input 
+```
 
 
 Проект будет доступен локально по адресу:
@@ -52,7 +63,7 @@ http://localhost/
 ```
 cd api_yamdb
 ```
-Заполнить в базу данные из csv файлов:
+Заполнить базу данными из csv файлов:
 
 ```
 python manage.py fill_db
